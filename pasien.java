@@ -72,6 +72,7 @@ public class pasien {
         String pekerjaan = in.nextLine();
         String keluhan = in.nextLine();
         String alamat = in.nextLine();
+        String jadwal = in.nextLine();
         
         while(jalan) {
             System.out.println("-----Daftar disini-----");
@@ -85,6 +86,8 @@ public class pasien {
             listPasien.add("Alamat    : " + alamat);
             System.out.println("Keluhan   : " + keluhan);
             listPasien.add("Keluhan   : " + keluhan);
+            System.out.println("Jadwal   : " + jadwal);
+            listPasien.add("Jadwal   : " + jadwal);
             
             System.out.println("Pendaftaran berhasil. Silakan beralih ke menu pembayaran.");
             jalan = false;
