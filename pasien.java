@@ -20,6 +20,7 @@ public class pasien {
         System.out.println("4. Biaya Perawatan");
         System.out.println("5. Daftar Obat");
         System.out.println("6. Status Ketersediaan Dokter");
+        System.out.println("7. Dokter yang Dapat Dikunjungi");
         System.out.print("Masukkan Pilihan Menu : ");
         String pilihan = in.nextLine();
             switch(pilihan) {
@@ -39,7 +40,10 @@ public class pasien {
                 DaftarObat()
                 break;
             case "6":
-                lihatAdaDokter();
+                StatusDokter();
+                break;
+            case "7":
+                DokAvailable();
                 break;
             default:
                 System.out.println("Pilihan tidak ada");
@@ -83,17 +87,17 @@ public class pasien {
             listPasien.add("Alamat    : " + alamat);
             System.out.println("Keluhan   : " + keluhan);
             listPasien.add("Keluhan   : " + keluhan);
-            System.out.println("Daftar Dokter yang Tersedia : " + "\n" + lihatAdaDokter());
+            System.out.println("Daftar Dokter yang Tersedia dan Jadwalnya : " + "\n" + lihatAdaDokter());
             System.out.println("Pilih dokter (masukkan angka)   : " + pilihan);
             switch(pilihan) {
                 case 1:
-                    listPasien.add("Dokter      : xxx" + "\n" + "Spesialis      : xxx);
+                    listPasien.add("Dokter      : xxx" + "\n" + "Spesialis      : xxx");
                     break;
                 case 2:
-                    listPasien.add("Dokter      : xxx" + "\n" + "Spesialis      : xxx);
+                    listPasien.add("Dokter      : xxx" + "\n" + "Spesialis      : xxx");
                     break;
                 case 3:
-                    listPasien.add("Dokter      : xxx" + "\n" + "Spesialis      : xxx);
+                    listPasien.add("Dokter      : xxx" + "\n" + "Spesialis      : xxx");
                     break;
             }
             System.out.println("Jadwal   : " + jadwal);
