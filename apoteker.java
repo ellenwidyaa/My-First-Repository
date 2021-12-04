@@ -92,73 +92,29 @@ public class apoteker {
 	static void menu() {
 		System.out.println("Menu Klinik Kita Bersama");
 		System.out.println("Pilihan : ");
-		System.out.println("1. Tambah Pasien");
-		System.out.println("2. Daftar Pasien");
-		System.out.println("3. Tambah Obat");
-		System.out.println("4. Daftar Obat");
-		System.out.println("5. Obat yang akan diberikan ke pasien");
-		System.out.println("6. Daftar Obat yang telah diberikan ke pasien");
-		System.out.println("7. Obat yang stocknya telah habis");
-		System.out.println("8. Keluar");
+		System.out.println("1. Daftar Pasien");
+		System.out.println("2. Tambah Obat");
+		System.out.println("3. Daftar Obat");
+		System.out.println("4. Obat yang akan diberikan ke pasien");
+		System.out.println("5. Daftar Obat yang telah diberikan ke pasien");
+		System.out.println("6. Obat yang stocknya telah habis");
+		System.out.println("7. Keluar");
 		System.out.print("Masukkan Pilihan Menu : ");
 		String pilihan = scan.nextLine();
 		switch(pilihan) {
-			case "1": tambahPasien(); break;
-			case "2": daftarPasien(); break;
-			case "3": tambahObat(); break;
-			case "4": daftarObat(); break;
-			case "5": obatPasien(); break;
-			case "6": daftarObatPasien(); break;
-			case "7": obatStockHabis(); break;
-			case "8": break;
+			case "1": daftarPasien(); break;
+			case "2": tambahObat(); break;
+			case "3": daftarObat(); break;
+			case "4": obatPasien(); break;
+			case "5": daftarObatPasien(); break;
+			case "6": obatStockHabis(); break;
+			case "7": break;
 			default: System.out.println("Pilihan tidak ada"); break;
 		}
 	}
-	static void tambahPasien() {
-		Patient[]pasien = new Patient[increasePatient];
-		System.arraycopy(patient, 0, pasien, 0, patient.length);
-		System.out.println("Masukkan nama pasien : ");
-		String name = scan.nextLine();
-		System.out.println("Masukkan umur pasien : ");
-		int age = scan.nextInt();
-		scan.nextLine();
-		System.out.println("Masukkan alamat rumah pasien : ");
-		String address = scan.nextLine();
-		System.out.println("Masukkan jenis kelamin pasien : ");
-		String gender = scan.nextLine();
-		Patient p = new Patient(name,age,address,gender);
-		pasien[pasien.length-1] = p;
-		patient = pasien;
-		increasePatient ++;
-		menu();
-	}
+
 	static void daftarPasien() {
-		int loopingPatient = 1;
-		for(int i = 0; i < patient.length;i++) {
-			System.out.println("Nama pasien ke-"+loopingPatient+" : "+patient[i].getName());
-			System.out.println("Umur pasien ke-"+loopingPatient+" : "+patient[i].getAge());
-			System.out.println("Umur pasien ke-"+loopingPatient+" : "+patient[i].getAddress());
-			System.out.println("Jenis Kelamin pasien ke-"+loopingPatient+" : "+patient[i].getGender());
-			for(int j = 0; j < patient[i].getDrug().length;j++) {
-				if(patient[i].getDrugFromArray(0) == null) {
-					System.out.println("Pasien tidak memiliki obat");
-					break;
-				}else {
-					if(patient[i].getDrugFromArray(j) == null) {
-						break;
-					}else {
-						System.out.println("Nama obat ke-"+(j+1)+" pasien ke-"+loopingPatient
-								+" : "+patient[i].getDrugFromArray(j).getName());
-						System.out.println("No Seri obat ke-"+(j+1)+" pasien ke-"+loopingPatient
-								+" : "+patient[i].getDrugFromArray(j).getNoSerial());
-						System.out.println("Kategori obat ke-"+(j+1)+" pasien ke-"+loopingPatient
-								+" : "+patient[i].getDrugFromArray(j).getCategory());
-						System.out.println("Stok obat ke-"+(j+1)+" pasien ke-"+loopingPatient
-								+" : "+patient[i].getDrugFromArray(j).getStock());
-					}
-				}
-			}
-			loopingPatient++;
+		lihatPasien()
 		}
 		menu();
 	}
