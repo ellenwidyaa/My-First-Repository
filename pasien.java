@@ -22,5 +22,34 @@ public class pasien {
         System.out.println("7. Dokter yang Dapat Dikunjungi");
         System.out.print("Masukkan Pilihan Menu : ");
         String pilihan = in.nextLine();
+            switch(pilihan) {
+            case "1":
+                daftar();
+                break;
+            case "2":
+                JadwalKontrol();
+                break;
+            case "3":
+                JadwalDokter();
+                break;
+            case "4":
+                BiayaPerawatan;
+                break;
+            case "5":
+                DaftarObat()
+                break;
+            case "6":
+                StatusDokter();
+                break;
+            case "7":
+                DokAvailable();
+                break;
+            default:
+                System.out.println("Pilihan tidak ada");
+                break;
+        }
+    }
+    }
+    }
         
 //SHELLEN
