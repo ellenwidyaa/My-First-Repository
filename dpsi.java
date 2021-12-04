@@ -1,3 +1,4 @@
+//RENA
 import java.util.*;
 public class pasien {
     static Scanner in = new Scanner(System.in);
@@ -21,3 +22,5 @@ public class pasien {
         System.out.println("7. Dokter yang Dapat Dikunjungi");
         System.out.print("Masukkan Pilihan Menu : ");
         String pilihan = in.nextLine();
+        
+//SHELLEN
