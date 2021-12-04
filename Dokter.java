@@ -12,35 +12,63 @@ public class RumahSakit2 {
     public static void main(String[] args) {
     Dokter d = new Dokter();
     d.inputData();
-    d.toString();
+    d.showDokter();
 }
     }
 
 class Dokter {
-    int pointer1=0;
-    int pointer2=0;
-    Dokter[] arr;
+    Dokter[] arr = new Dokter[3];
+    int pointer = 0;
     Scanner sc = new Scanner(System.in);
-    String nama = sc.nextLine();
-    String day = sc.nextLine();
-    String jam = sc.nextLine();
+    private String nama; 
+    private String day; 
+    private String jam; 
     
-    public void setData(String day, String jam)
+    public Dokter(String nama, String day, String jam)
     {
+        this.nama = nama;
         this.day = day;
         this.jam = jam;
     }
     
-    public void inputData() {
-    for(int i=pointer1; i< pointer1+1; i++){
-        System.out.print("Masukkan nama Anda : ");
-        pointer1++;
-        for(int j=pointer2; j< pointer2+5; j++) {
-            System.out.print("Masukkan hari dan jam praktik Anda : ");
-            arr[i][j] = new Dokter();
-            pointer2++;
-        } 
+    public Dokter() {
+        
     }
+    
+    public void setNama (String nama) {
+        this.nama = nama;
+    }
+    
+    public String getNama () {
+        return nama;
+    }
+    
+    public void setDay (String day) {
+        this.day = day;
+    }
+    
+    public String getDay () {
+        return day;
+    }
+    
+    public void setJam (String jam) {
+        this.jam = jam;
+    }
+    
+    public String getJam () {
+        return jam;
+    }
+    
+    public void inputData() {
+        System.out.print("Masukkan nama Anda : ");
+        String nama = sc.nextLine();
+        System.out.print("Masukkan hari kerja Anda : ");
+        String day = sc.nextLine();
+        System.out.print("Masukkan jam kerja Anda : ");
+        String jam = sc.nextLine();
+        Dokter dokter = new Dokter(nama, day, jam);
+        arr[pointer] = dokter;
+        pointer++;
     }
     
     public void showObat () {
@@ -51,15 +79,23 @@ class Dokter {
         
     }
     
-    public String toString(){
-         String str="";
-        int i=0; int j=0;
-        while(arr[i][j] != null){
-            str += arr[i][j]+"\n";
-            i++;
-            j++;
+    public void showDokter() {
+        System.out.println("==================================================");
+        for (int i = 0; i < arr.length; i++) {
+            Dokter dokter = arr[i];
+            if (dokter == null) {
+                System.out.println("==================================================");
+                return;
+            }
+            System.out.printf("Nama dokter %d \t\t: \t%s \n", i + 1, dokter.getNama());
+            System.out.printf("Hari dokter praktik %d \t: \t%s \n", i + 1, dokter.getDay());
+            System.out.printf("Jam dokter praktik %d \t: \t%s \n", i + 1, dokter.getJam());
+            System.out.println("----------------------------------------------");
         }
-        return str;
+    }
+    
+    public void kontrolPasien () {
+        
     }
 }
 
