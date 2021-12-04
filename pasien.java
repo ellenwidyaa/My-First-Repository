@@ -73,6 +73,7 @@ public class pasien {
         String keluhan = in.nextLine();
         String alamat = in.nextLine();
         String jadwal = in.nextLine();
+        int pilihan = in.nextLine();
         
         while(jalan) {
             System.out.println("-----Daftar disini-----");
@@ -86,6 +87,16 @@ public class pasien {
             listPasien.add("Alamat    : " + alamat);
             System.out.println("Keluhan   : " + keluhan);
             listPasien.add("Keluhan   : " + keluhan);
+            System.out.println("Daftar Dokter yang Tersedia : " + "\n" + lihatAdaDokter());
+            System.out.println("Pilih dokter (masukkan angka)   : " + pilihan);
+            switch(pilihan) {
+                case 1:
+                    listPasien.add("Dokter      : xxx" + "\n" + "Spesialis      : xxx);
+                case 2:
+                    listPasien.add("Dokter      : xxx" + "\n" + "Spesialis      : xxx);
+                case 3:
+                    listPasien.add("Dokter      : xxx" + "\n" + "Spesialis      : xxx);
+            }
             System.out.println("Jadwal   : " + jadwal);
             listPasien.add("Jadwal   : " + jadwal);
             
