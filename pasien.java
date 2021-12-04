@@ -2,8 +2,6 @@
 import java.util.*;
 public class pasien {
     static Scanner in = new Scanner(System.in);
-
-    public static void main(String args[]) {
 //        input data pasien
         String nama, id_member, jenis_kelamin, umur, pekerjaan;
         System.out.println("========DATA PASIEN========");
@@ -50,6 +48,6 @@ public class pasien {
         }
     }
     }
-    }
+    
         
 //SHELLEN
