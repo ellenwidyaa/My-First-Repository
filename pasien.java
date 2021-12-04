@@ -92,10 +92,13 @@ public class pasien {
             switch(pilihan) {
                 case 1:
                     listPasien.add("Dokter      : xxx" + "\n" + "Spesialis      : xxx);
+                    break;
                 case 2:
                     listPasien.add("Dokter      : xxx" + "\n" + "Spesialis      : xxx);
+                    break;
                 case 3:
                     listPasien.add("Dokter      : xxx" + "\n" + "Spesialis      : xxx);
+                    break;
             }
             System.out.println("Jadwal   : " + jadwal);
             listPasien.add("Jadwal   : " + jadwal);
