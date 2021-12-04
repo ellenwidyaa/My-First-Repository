@@ -20,7 +20,6 @@ public class pasien {
         System.out.println("4. Biaya Perawatan");
         System.out.println("5. Daftar Obat");
         System.out.println("6. Status Ketersediaan Dokter");
-        System.out.println("7. Dokter yang Dapat Dikunjungi");
         System.out.print("Masukkan Pilihan Menu : ");
         String pilihan = in.nextLine();
             switch(pilihan) {
@@ -40,10 +39,7 @@ public class pasien {
                 DaftarObat()
                 break;
             case "6":
-                StatusDokter();
-                break;
-            case "7":
-                DokAvailable();
+                lihatAdaDokter();
                 break;
             default:
                 System.out.println("Pilihan tidak ada");
