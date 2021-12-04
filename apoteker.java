@@ -1,6 +1,3 @@
-
-package dpsi;
-
 import java.util.*;
 
 class Drug{
@@ -168,13 +165,13 @@ public class apoteker {
 	static void tambahObat() {
 		Drug[]obat = new Drug[increaseDrug];
 		System.arraycopy(drug, 0, obat, 0, drug.length);
-		System.out.println("Masukkan nama obat : ");
+		System.out.println("Masukkan nama obat       : ");
 		String name = scan.nextLine();
 		System.out.println("Masukkan nomor seri obat : ");
 		String no = scan.nextLine();
-		System.out.println("Masukkan kategori obat : ");
+		System.out.println("Masukkan kategori obat   : ");
 		String category = scan.nextLine();
-		System.out.println("Masukkan stock obat : ");
+		System.out.println("Masukkan stock obat      : ");
 		int stock = scan.nextInt();
 		scan.nextLine();
 		Drug d = new Drug(name,no,category,stock);
