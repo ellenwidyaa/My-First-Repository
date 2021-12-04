@@ -1,10 +1,13 @@
 //RENA
 import java.util.*;
 public class pasien {
+    ArrayList<String> listPasien = new ArrayList<>();
     static Scanner in = new Scanner(System.in);
+
+    public static void main(String args[]) {
 //        input data pasien
         String nama, id_member, jenis_kelamin, umur, pekerjaan;
-        System.out.println("========LOGIN========");
+        System.out.println("========DATA PASIEN========");
         System.out.print("Nama              : ");
         nama = in.nextLine();
         System.out.print("Id Pasien         : ");
@@ -48,6 +51,42 @@ public class pasien {
         }
     }
     }
+    }
+
+//lihat ketersediaan dokter
+    void lihatAdaDokter() {
+        for (int i = 0; i < listDokter.length; i++) {
+            if (listDokter.getStatus().contains("Ada")) {
+                System.out.println(listDokter[i]);
+            } else {
+                System.out.println("Tidak ada dokter yang sedang kosong.");
+            }
+        }
+    }
     
+//daftar mandiri
+    void daftarMandiri() {
+        boolean jalan = true;
+        String nama = in.nextLine();
+        String umur = in.nextLine();
+        String pekerjaan = in.nextLine();
+        String keluhan = in.nextLine();
+        String alamat = in.nextLine();
         
-//SHELLEN
+        while(jalan) {
+            System.out.println("-----Daftar disini-----");
+            System.out.println("Nama      : " + nama);
+            listPasien.add("Nama      : " + nama);
+            System.out.println("Umur      : " + umur);
+            listPasien.add("Umur      : " + umur);
+            System.out.println("Pekerjaan : " + pekerjaan);
+            listPasien.add("Pekerjaan : " + pekerjaan);
+            System.out.println("Alamat    : " + alamat);
+            listPasien.add("Alamat    : " + alamat);
+            System.out.println("Keluhan   : " + keluhan);
+            listPasien.add("Keluhan   : " + keluhan);
+            
+            System.out.println("Pendaftaran berhasil. Silakan beralih ke menu pembayaran.");
+            jalan = false;
+        }
+    }
