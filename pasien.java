@@ -4,7 +4,7 @@ public class pasien {
     static Scanner in = new Scanner(System.in);
 //        input data pasien
         String nama, id_member, jenis_kelamin, umur, pekerjaan;
-        System.out.println("========DATA PASIEN========");
+        System.out.println("========LOGIN========");
         System.out.print("Nama              : ");
         nama = in.nextLine();
         System.out.print("Id Pasien         : ");
