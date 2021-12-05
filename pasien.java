@@ -1,13 +1,16 @@
 import java.util.Scanner;
 
 class pasien {
-    static Scanner in = new Scanner(System.in);
+    Scanner in = new Scanner(System.in);
     pasien[] arr = new pasien[100];
     pasien[] dokter1 = new pasien[100];
     pasien[] dokter2 = new pasien[100];
     pasien[] dokter3 = new pasien[100];
     Dokter d = new Dokter();
     int pointer = 0;
+    int pointer1 =0;
+    int pointer2 =0;
+    int pointer3 =0;
     private String name;
     private int age;
     private String address;
@@ -23,6 +26,10 @@ class pasien {
         this.gender = gender;
         this.keluhan = keluhan;
         this.Pekerjaan = Pekerjaan;
+    }
+    
+    public pasien() {
+        
     }
 
     public int getAge() {
@@ -81,16 +88,14 @@ class pasien {
         this.address = address;
     }
 
-
     public void daftarMandiri() {
         System.out.println("=======DAFTAR PASIEN============");
         System.out.println("Silahkan pilih dokter yang tersedia ");
-        d.showDokter
+        d.showDokter();
         System.out.println("Jawaban : ");
         int jawabDokter = in.nextInt();
         switch (jawabDokter){
             case 1 :
-
                 System.out.println("Nama            : ");
                 String name = in.nextLine();
                 System.out.println("Umur            : ");
@@ -105,10 +110,11 @@ class pasien {
                 System.out.println("Keluhan          : ");
                 String keluhan = in.nextLine();
                 System.out.println("Pendaftaran berhasil. Silakan melakukan konsultasi dengan dokter yang dipilih");
-                Dokter dokter1 = Dokter(name, age, address, gender, Pekerjaan, keluhan);
+                pasien Dokter1= new pasien(name, age, address, gender, Pekerjaan, keluhan);
                 pasien Pasien = new pasien(name, age, address, gender, Pekerjaan, keluhan);
-                dokter1[pointer]=Dokter;
+                dokter1[pointer1]=Dokter1;
                 arr[pointer] = Pasien;
+                pointer1++;
                 pointer++;
                 break;
             case 2 :
@@ -126,11 +132,12 @@ class pasien {
                 System.out.println("Keluhan          : ");
                 keluhan = in.nextLine();
                 System.out.println("Pendaftaran berhasil. Silakan melakukan konsultasi dengan dokter yang dipilih");
-                Dokter Dokter2 = Dokter(name, age, address, gender, Pekerjaan, keluhan);
+                pasien Dokter2 = new pasien(name, age, address, gender, Pekerjaan, keluhan);
                 pasien Pasien2 = new pasien(name, age, address, gender, Pekerjaan, keluhan);
-                dokter2 [pointer]= Dokter2;
+                dokter2 [pointer2]= Dokter2;
                 arr [pointer] = Pasien2;
                 pointer++;
+                pointer2++;
                 break;
             case 3 :
                 System.out.println("Nama            : ");
@@ -138,7 +145,7 @@ class pasien {
                 System.out.println("Umur            : ");
                 age = in.nextInt();
                 in.nextLine();
-                System.out.println("Alamat  :       : ");
+                System.out.println("Alamat          : ");
                 address = in.nextLine();
                 System.out.println("Jenis kelamin   : ");
                 gender = in.nextLine();
@@ -147,10 +154,11 @@ class pasien {
                 System.out.println("Keluhan          : ");
                 keluhan = in.nextLine();
                 System.out.println("Pendaftaran berhasil. Silakan melakukan konsultasi dengan dokter yang dipilih");
-                Dokter Dokter3 = Dokter(name, age, address, gender, Pekerjaan, keluhan);
+                pasien Dokter3 = new pasien(name, age, address, gender, Pekerjaan, keluhan);
                 pasien Pasien3 = new pasien(name, age, address, gender, Pekerjaan, keluhan);
                 dokter3 [pointer]=Dokter3;
                 arr[pointer] = Pasien3;
+                pointer2++;
                 pointer++;
                 break;
             default :
@@ -231,10 +239,6 @@ class pasien {
             System.out.println("----------------------------------------------");
         }
     }
-
-    public void JadwalKontrol(){
-        d.kontrolPasein();
-    }
     
     public void BiayaPerawatan() {
         int harga1;
@@ -254,7 +258,7 @@ class pasien {
         }
     }
     public void DaftarObat(){
-        d.obatPasien();
+        d.showObatPasien();
     }
 
     public void MenuPasien() {
@@ -263,10 +267,9 @@ class pasien {
         do {
             System.out.println("Pilihan Menu : ");
             System.out.println("1. Daftar");
-            System.out.println("2. Jadwal Kontrol");
-            System.out.println("3. Biaya Perawatan");
-            System.out.println("4. Daftar Obat");
-            System.out.println("5. Keluar");
+            System.out.println("2. Biaya Perawatan");
+            System.out.println("3. Daftar Obat");
+            System.out.println("4. Keluar");
             System.out.print("Masukkan Pilihan Menu : ");
             pilihan = in.nextInt();
             switch (pilihan) {
@@ -274,15 +277,12 @@ class pasien {
                     daftarMandiri();
                     break;
                 case 2:
-                    JadwalKontrol();
-                    break;
-                case 3:
                     BiayaPerawatan();
                     break;
-                case 4:
+                case 3:
                     DaftarObat();
                     break;
-                case 5:
+                case 4:
                     break;
                 default:
                     System.out.println("Pilihan tidak ada");
