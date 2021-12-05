@@ -6,38 +6,45 @@ import java.util.*;
  * @author Gatot
  */
 
-public class Keuangan {
-
-    public static void main(String[] args) {
-        LinkedList1 masuk = new LinkedList1();
-        LinkedList1 keluar = new LinkedList1();
+public class keuang {
+    String[] karyawan = new String[2];
+    LinkedList masuk = new LinkedList();
+    LinkedList keluar = new LinkedList();
+    Pasien p = new Pasien();
+    public void pembayaran(){
         Scanner in = new Scanner(System.in);
-        
+        System.out.println("Biaya yang harus dibayar sebesar: ");
+        p.BiayaPerawatan();
         do{
-            System.out.print("Pembayaran masuk atau keluar? ");
-            if(in.next().matches("masuk")){
+        System.out.println("Pilihan Menu : ");
+        System.out.println("1. Pembayaran Masuk");
+        System.out.println("2. Pembayaran keluar");
+        String pilih = in.next();
+        switch (in.next()){
+            case "1":
                 System.out.print("Jumlah yang dibayarkan: ");
-                masuk.input(in.nextInt());
-            }else{
+                masuk.add(in.nextInt());
+                break;
+            case "2":
                 System.out.print("Jumlah yang dibayarkan: ");
-                keluar.input(in.nextInt());         
-            }
-            System.out.print("Ingin melakukan transaksi(ya/tidak)? ");
-        } while(in.next().matches("ya"));
-        
-        System.out.println("List pembayaran masuk: ");
+                keluar.add(in.nextInt()); 
+                break; 
+            default:
+                break;
+        }System.out.print("Ingin melakukan transaksi(ya/tidak)? ");
+        }while(in.next().matches("ya"));
+    }
+    public void print(){System.out.println("List pembayaran masuk: ");
         masuk.tampil();
         System.out.println("List pembayaran keluar: ");
-        keluar.tampil();
+        keluar.tampil();        
     }
-    
 }
-
-class Node1{
+class Node{
     int data;
     Node next;
 }
-class LinkedList1{
+class LinkedList{
      Node head;
     public void input(int data){
         Node node = new Node();
