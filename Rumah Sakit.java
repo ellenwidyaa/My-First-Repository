@@ -165,7 +165,11 @@ class pasien {
             jalan = false;
         }
     }
-       System.out.println("========DATA PASIEN========");
+       public void listPasien(){
+        System.out.println(listPasien);
+    }
+	
+       System.out.println("========LOGIN========");
         System.out.print("Nama              : ");
     nama = in.nextLine();
         System.out.print("Id Pasien         : ");
