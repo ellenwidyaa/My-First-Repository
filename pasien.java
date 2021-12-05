@@ -1,55 +1,17 @@
-//RENA
-import java.util.*;
-public class pasien {
+
+class pasien {
     ArrayList<String> listPasien = new ArrayList<>();
     static Scanner in = new Scanner(System.in);
 
-    public static void main(String args[]) {
-//        input data pasien
-        String nama, id_member, jenis_kelamin, umur, pekerjaan;
-        System.out.println("========DATA PASIEN========");
-        System.out.print("Nama              : ");
-        nama = in.nextLine();
-        System.out.print("Id Pasien         : ");
-        id_member = in.nextLine();
-//        Pilihan Menu
-        System.out.println("Pilihan Menu : ");
-        System.out.println("1. Daftar");
-        System.out.println("2. Jadwal Kontrol");
-        System.out.println("3. Jadwal Dokter");
-        System.out.println("4. Biaya Perawatan");
-        System.out.println("5. Daftar Obat");
-        System.out.println("6. Status Ketersediaan Dokter");
-        System.out.print("Masukkan Pilihan Menu : ");
-        String pilihan = in.nextLine();
-            switch(pilihan) {
-            case "1":
-                daftar();
-                break;
-            case "2":
-                JadwalKontrol();
-                break;
-            case "3":
-                JadwalDokter();
-                break;
-            case "4":
-                BiayaPerawatan;
-                break;
-            case "5":
-                DaftarObat()
-                break;
-            case "6":
-                StatusDokter();
-                break;
-            default:
-                System.out.println("Pilihan tidak ada");
-                break;
-        }
-    }
-    }
-    }
+    //        input data pasien
+    String nama, id_member, jenis_kelamin, umur, pekerjaan;
 
-//lihat ketersediaan dokter
+    public void JadwalKontrol(){}
+    
+    public void JadwalDokter(){}
+    public void BiayaPerawatan(){}
+    public void DaftarObat(){}
+    //lihat ketersediaan dokter
     void lihatAdaDokter() {
         for (int i = 0; i < listDokter.length; i++) {
             if (listDokter.getStatus().contains("Ada")) {
@@ -59,9 +21,9 @@ public class pasien {
             }
         }
     }
-    
-//daftar mandiri
-    void daftarMandiri() {
+
+    //daftar mandiri
+    public void daftarMandiri() {
         boolean jalan = true;
         String nama = in.nextLine();
         String umur = in.nextLine();
@@ -70,7 +32,7 @@ public class pasien {
         String alamat = in.nextLine();
         String jadwal = in.nextLine();
         int pilihan = in.nextLine();
-        
+
         while(jalan) {
             System.out.println("-----Daftar disini-----");
             System.out.println("Nama      : " + nama);
@@ -98,8 +60,46 @@ public class pasien {
             }
             System.out.println("Jadwal   : " + jadwal);
             listPasien.add("Jadwal   : " + jadwal);
-            
+
             System.out.println("Pendaftaran berhasil. Silakan beralih ke menu pembayaran.");
             jalan = false;
         }
     }
+       System.out.println("========DATA PASIEN========");
+        System.out.print("Nama              : ");
+    nama = in.nextLine();
+        System.out.print("Id Pasien         : ");
+    id_member = in.nextLine();
+//        Pilihan Menu
+        System.out.println("Pilihan Menu : ");
+        System.out.println("1. Daftar");
+        System.out.println("2. Jadwal Kontrol");
+        System.out.println("3. Jadwal Dokter");
+        System.out.println("4. Biaya Perawatan");
+        System.out.println("5. Daftar Obat");
+        System.out.println("6. Status Ketersediaan Dokter");
+	System.out.println("7. Keluar");
+        System.out.print("Masukkan Pilihan Menu : ");
+    String pilihan = in.nextLine();
+            switch(pilihan) {
+        case "1":
+            daftarMandiri();
+            break;
+        case "2":
+            JadwalKontrol();
+            break;
+        case "3":
+            JadwalDokter();
+            break;
+        case "4":
+            BiayaPerawatan();
+            break;
+        case "5":
+            DaftarObat()break;
+        case "6":
+            lihatAdaDokter();break;
+        case "7": break;
+        default:
+            System.out.println("Pilihan tidak ada");break;
+    }
+}
