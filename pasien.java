@@ -232,8 +232,10 @@ class pasien {
         }
     }
 
-    public void JadwalKontrol(){}
-    public void JadwalDokter(){}
+    public void JadwalKontrol(){
+        d.kontrolPasein();
+    }
+    
     public void BiayaPerawatan() {
         int harga1;
         int harga2;
@@ -251,7 +253,9 @@ class pasien {
 
         }
     }
-    public void DaftarObat(){}
+    public void DaftarObat(){
+        d.obatPasien();
+    }
 
     public void MenuPasien() {
 //        Pilihan Menu
@@ -260,10 +264,9 @@ class pasien {
             System.out.println("Pilihan Menu : ");
             System.out.println("1. Daftar");
             System.out.println("2. Jadwal Kontrol");
-            System.out.println("3. Jadwal Dokter");
-            System.out.println("4. Biaya Perawatan");
-            System.out.println("5. Daftar Obat");
-            System.out.println("7. Keluar");
+            System.out.println("3. Biaya Perawatan");
+            System.out.println("4. Daftar Obat");
+            System.out.println("5. Keluar");
             System.out.print("Masukkan Pilihan Menu : ");
             pilihan = in.nextInt();
             switch (pilihan) {
@@ -274,20 +277,17 @@ class pasien {
                     JadwalKontrol();
                     break;
                 case 3:
-                    JadwalDokter();
-                    break;
-                case 4:
                     BiayaPerawatan();
                     break;
-                case 5:
+                case 4:
                     DaftarObat();
                     break;
-                case 6:
+                case 5:
                     break;
                 default:
                     System.out.println("Pilihan tidak ada");
                     break;
             }
-        }while(pilihan !=5);
+        }while(pilihan !=4);
     }
 }
