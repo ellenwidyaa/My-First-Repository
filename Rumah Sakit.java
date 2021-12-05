@@ -485,4 +485,34 @@ class LinkedList1{
         }
         System.out.println(node.data);
     }
+	
 }
+
+    public static void main(String[] args) {
+        String dokter, pasien, apoteker, admin, keuangan;
+        int jawab;
+        System.out.println("=========SELAMAT DATANG DI KLINIK BEN MARI");
+        System.out.println("Siapakah Anda ?");
+        System.out.println("1. Dokter");
+        System.out.println("2. Apoteker");
+        System.out.println("3. Pasien");
+        System.out.println("4. Administrasi");
+        System.out.println("5. Bagian Keuangan");
+        System.out.println("6. Keluar");
+        System.out.print("Jawaban (mohon dijawab dengan angka) : ");
+        jawab : in.nextInt();
+        switch (jawab){
+            case 1: break;
+            case 2: break;
+            case 3: break;
+            case 4: break;
+            case 5 : break;
+            case 6 :
+                System.out.println("=====TERIMA KASIH ATAS KUNJUNGANNYA======");break;
+            default :
+                System.out.println("Pilihan tidak ada");break
+                
+        }
+
+
+    }
