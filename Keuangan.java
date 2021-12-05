@@ -7,12 +7,27 @@ import java.util.*;
  */
 
 public class keuang {
-    String[] karyawan = new String[2];
-    LinkedList masuk = new LinkedList();
+   LinkedList masuk = new LinkedList();
     LinkedList keluar = new LinkedList();
     Pasien p = new Pasien();
+    String nama;
+    Scanner in = new Scanner(System.in);
+    public uang(String nama){
+        this.nama = nama;
+    }    
+    public void setNama (String nama) {
+        this.nama = nama;
+    }
+    
+    public String getNama () {
+        return nama;
+    }
+    public void inputKaryawan(){
+        System.out.print("Masukkan nama Anda : ");
+        nama = in.nextLine();
+    }
     public void pembayaran(){
-        Scanner in = new Scanner(System.in);
+        
         System.out.println("Biaya yang harus dibayar sebesar: ");
         p.BiayaPerawatan();
         do{
