@@ -31,11 +31,12 @@ class Drug{
 	}
 }
 
-public class apoteker {
+class apoteker {
 	static int increasePatient = 1;
 	static int increaseDrug = 1;
 	static Drug[]drug = new Drug[0];
 	static Scanner scan;
+        static Dokter d = new Dokter();
 	public static void main(String args[]) {
 		scan = new Scanner(System.in);
 		menu();
@@ -96,6 +97,7 @@ public class apoteker {
 	
 	static void obatPasien() {
 		//manggil method yg ada di dokter
+                d.obatPasien();
 		menu();
 	}
         
