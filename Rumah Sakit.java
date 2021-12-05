@@ -92,7 +92,24 @@ class pasien {
     public void JadwalKontrol(){}
     
     public void JadwalDokter(){}
-    public void BiayaPerawatan(){}
+    public void BiayaPerawatan(){
+       int harga1,harga2,harga3;
+
+        switch(noDokter) {
+            case 1:
+                harga1 = 150000;
+                System.out.println("Biaya perawatan : " + harga1);
+                break;
+            case 2:
+                harga1 = 200000;
+                System.out.println("Biaya perawatan : " + harga2);
+                break;
+            case 3:
+                harga1 = 100000;
+                System.out.println("Biaya perawatan : " + harga3);
+                break;
+        }
+    }
     public void DaftarObat(){}
     //lihat ketersediaan dokter
     void lihatAdaDokter() {
